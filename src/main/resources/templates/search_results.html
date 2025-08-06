@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Results</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form action="/search" method="get">
+    <label for="site">Выберите сайт:</label>
+    <select id="site" name="site">
+        <option value="">Все сайты</option>
+        <option value="https://www.playback.ru">https://www.playback.ru</option>
+        <option value="https://www.lenta.ru">https://www.lenta.ru</option>
+    </select>
+
+    <label for="query">Поисковый запрос:</label>
+    <input type="text" id="query" name="query" th:value="${query}">
+
+    <button type="submit">Поиск</button>
+</form>
+
+<div th:if="${not #lists.isEmpty(results)}">
+    <h2>Результаты поиска:</h2>
+    <div th:each="result : ${results}" class="search-result">
+        <h3 th:text="${result.title}"></h3>
+        <a th:href="${result.path}" th:text="${result.path}"></a>
+        <p th:utext="${result.snippet}"></p>
+        <p>Relevance: <span th:text="${result.relevance}"></span></p>
+    </div>
+</div>
+<div th:unless="${not #lists.isEmpty(results)}">
+    <p>Ничего не найдено по запросу "<span th:text="${query}"></span>".</p>
+</div>
+<tr th:each="result : ${results}">
+    <td th:text="${result.title}"></td>
+    <td th:text="${result.path}"></td>
+    <td th:text="${result.snippet}"></td>
+    <td th:text="${result.relevance}"></td>
+</tr>
+
+</body>
+</html>

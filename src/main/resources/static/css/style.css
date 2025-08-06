@@ -1,0 +1,116 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+.wrap {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.Tabs {
+    display: flex;
+    border-bottom: 2px solid #2c3e50;
+}
+
+.Tabs-link {
+    padding: 15px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: background 0.3s;
+}
+
+.Tabs-link_ACTIVE {
+    background: #2c3e50;
+    color: white;
+}
+
+.Section {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn_primary {
+    background: #3498db;
+}
+
+.btn_primary:hover {
+    background: #2980b9;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.Statistics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Statistics-block {
+    text-align: center;
+}
+
+.Statistics-amount {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Statistics-title {
+    font-size: 14px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .Tabs {
+        flex-direction: column;
+    }
+
+    .Statistics {
+        flex-direction: column;
+    }
+
+    .Statistics-block {
+        margin-bottom: 20px;
+    }
+}
